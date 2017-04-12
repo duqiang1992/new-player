@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="./metronic/assets/global/plugins/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link href="./metronic/assets/global/plugins/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="./metronic/assets/global/css/components.css" rel="stylesheet"/>
+    <style>
+       .errorMessage{
+            color: #FF0000;
+        }
+    </style>
+</head>
+<body>
+<div class="page-content" style="min-height:711px">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-horizontal" id="myForm">
+                <div class="portlet box blue">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-pencil-square-o"></i>添加课程
+                        </div>
+                        <div class="tools">
+                            <a class="collapse" href="javascript:;" data-original-title="" title=""> </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body" style="display: block;">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">课件代码
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        <input name="kjdm" type="text" maxlength="30" class="form-control">
+                                    </div>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">课件名称
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        <input name="kjmc" type="text" maxlength="50" class="form-control">
+                                    </div>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">课件总时长
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        <input name="kjsc" type="number" maxlength="50" class="form-control">
+                                    </div>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">主讲师
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        <input name="zjjs" type="text" maxlength="30" class="form-control">
+                                    </div>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">课程图片
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        <input type="file" name="kjtp" id="kjtp"  class="form-control">
+                                    </div>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">课件URL域名
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        <input name="kjlj" type="text" maxlength="200"
+                                               id="kjlj" class="form-control">
+                                    </div>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">是否顺序学习
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="radio col-sm-8">
+                                    <label >
+                                        <input type="radio"  name="sxxx" value="1" checked>是
+                                    </label>
+                                    <label >
+                                        <input type="radio"  name="sxxx" value="0"> 否
+                                    </label>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">是否允许拖动播放
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="radio col-sm-8" >
+                                    <label >
+                                        <input type="radio"  name="yxtd" value="1" checked>是
+                                    </label>
+                                    <label >
+                                        <input type="radio"  name="yxtd" value="0"> 否
+                                    </label>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">是否自动播放
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="radio col-sm-8">
+                                    <label >
+                                        <input type="radio" name="zdbf" value="1" checked>是
+                                    </label>
+                                    <label >
+                                        <input type="radio" name="zdbf" value="0"> 否
+                                    </label>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">是否自动加载下一章
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="radio col-sm-8">
+                                    <label >
+                                        <input type="radio" name="zdjzxyz" value="1" checked>是
+                                    </label>
+                                    <label >
+                                        <input type="radio" name="zdjzxyz" value="0"> 否
+                                    </label>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">排序
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        <input name="px" type="number" maxlength="3"
+                                               id="px" class="form-control" value="999">
+                                    </div>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">课件简介</label>
+                                <div class="col-sm-8">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        <textarea name="kjjj" rows="6" cols="20"
+                                                  id="kjjj" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-sm-offset-2 col-sm-9">
+                                    <input type="submit" id="btnTJ" value="添加" class="btn blue">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--[if lt IE 9]>
+<script src="/js/es5-shim.js"></script>
+<script src="/js/es5-sham.js"></script>
+<script src="/metronic/assets/global/plugins/respond.js"></script>
+<script src="/metronic/assets/global/plugins/excanvas.js"></script>
+<![endif]-->
+<script src="./metronic/assets/global/plugins/jquery.js"></script>
+<script src="./metronic/assets/global/plugins/bootstrap/js/bootstrap.js"></script>
+<script src="./metronic/assets/global/scripts/app.js"></script>
+<script src="/js/jquery.validate.js"></script>
+<script src="./js/jquery.form.js"></script>
+<script src="./js/bioadanyanz.js"></script>
+<script src="./js/height.js"></script>
+<script src="./assets/global/plugins/jquery.blockui.min.js"></script>
+<script src="/js/loading.js"></script>
+<!--<script src="./js/common.js"></script>-->
+<script>
+//表单验证 提交
+$(biaoDanYanZ("#myForm","/postFormKeJian",function (data) {
+    $('#myForm').resetForm()
+},function (data) {
+    $('#myForm').resetForm()
+}))
+
+
+
+
+
+</script>
+</body>
+</html>

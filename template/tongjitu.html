@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>
+        课程资源管理
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link href="./metronic/assets/global/plugins/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link href="./metronic/assets/global/plugins/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="./metronic/assets/global/css/components.css" rel="stylesheet"/>
+    <!--<link href="./metronic/assets/global/css/plugins.css" rel="stylesheet"/>-->
+    <!--<link rel="stylesheet" href="./metronic/assets/global/plugins/select2/css/select2.css">-->
+</head>
+<body>
+<div class="page-content" style="min-height:650px">
+    <div class="row">
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-line-chart"></i>
+                    <span class="caption-subject font-dark bold uppercase"><a href="">课程每日访问情况</a></span>
+                    <span class="caption-helper"></span>
+                </div>
+                <div class="actions">
+                    <div class="btn-group">
+                        <a data-close-others="true" data-hover="dropdown" data-toggle="dropdown" class="btn dark btn-outline btn-circle btn-sm dropdown-toggle hover-initialized" href="" aria-expanded="true"> 统计范围
+                            <span class="fa fa-angle-down"> </span>
+                        </a>
+                        <ul id="dataView" class="dropdown-menu pull-right">
+                            <li class="active" data="7">
+                                <a href="javascript:;" > 近7天 </a>
+                            </li>
+                            <li data="10">
+                                <a href="javascript:;"> 近10天 </a>
+                            </li>
+                            <li data="15">
+                                <a href="javascript:;"> 近15天 </a>
+                            </li>
+                            <li  data="30">
+                                <a href="javascript:;"> 近30天 </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div id="pnlTongJiTu" data-highcharts-chart="0">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<!--[if lt IE 9]>
+<script src="/js/es5-shim.js"></script>
+<script src="/js/es5-sham.js"></script>
+<script src="/metronic/assets/global/plugins/respond.js"></script>
+<script src="/metronic/assets/global/plugins/excanvas.js"></script>
+<![endif]-->
+<script src="./metronic/assets/global/plugins/jquery.js"></script>
+<script src="./metronic/assets/global/plugins/bootstrap/js/bootstrap.js"></script>
+<script src="./metronic/assets/global/plugins/highcharts/js/highcharts.js"></script>
+<script src="./assets/global/plugins/jquery.blockui.min.js"></script>
+<script src="./js/height.js"></script>
+<script src="/js/loading.js"></script>
+<script>
+
+    var obj ={tjts:7,kcdmlb:''};
+    toAJAX();
+    $('#dataView').find('li').bind('click',function () {
+        obj.tjts= parseInt($(this).attr('data'));
+        toAJAX();
+        return false
+    });
+
+    function toAJAX() {
+        $.ajax({
+            url: "/kjVew",
+            type: "post",
+            dataType: 'json',
+            data: obj,
+            success: function (data) {
+                var Dary = [],countAry=[],allAry=data.ShuJu,dataObj={};
+                $(allAry).each(function (index,item) {
+                    var ary = [],itemObj = {};
+                    itemObj.KeChengMing = item['课程'];
+                    for(var a in item){
+                        if(a!='课程') {
+                            ary.push(item[a]);
+                            if(index==0){
+                                Dary.push(a)
+                            }
+                        }
+                    }
+                    itemObj.TongJiZhi = ary;
+                    countAry.push(itemObj)
+                });
+                dataObj.TongJiRiQi=Dary;
+                dataObj.ShuJu=countAry;
+                $('#endPhoto').show();
+                highPhoto(dataObj);
+                toHeight();
+            }
+        });
+    }
+    //    生成统计图
+    function highPhoto(data) {
+        var aryData= [],
+            shuju =data.ShuJu,
+            allShuJu = [];
+        if(shuju.length<=10){
+            $(data.ShuJu).each(function (index,item) {
+                aryData.push({
+                    name:item.KeChengMing,
+                    data:item.TongJiZhi
+                })
+            });
+        }
+        if(shuju.length>10){
+            var dataObj ={name:'全部课件',data:[]};
+            $(shuju).each(function (index,item) {
+                allShuJu.push(item.TongJiZhi)
+            });
+            for(var i=0;i<allShuJu[0].length;i++){;
+                var all = 0;
+                $(allShuJu).each(function (index,item) {
+                    all +=parseInt(item[i])
+                });
+                dataObj.data.push(all)
+            }
+            aryData.push(dataObj)
+        }
+        $('#pnlTongJiTu').highcharts({
+            title: {
+                text: '访问统计图',
+                x: -20 //center
+            },
+//                subtitle: {
+//                    text: 'Source: WorldClimate.com',
+//                    x: -20
+//                },
+            xAxis: {
+                categories: data.TongJiRiQi
+            },
+            yAxis: {
+                title: {
+                    text: '访问次数'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+//                tooltip: {
+//                    valueSuffix: '°C'
+//                },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: aryData
+        });
+    }
+</script>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/metronic/assets/global/plugins/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link href="/metronic/assets/global/plugins/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/metronic/assets/global/css/components.css" rel="stylesheet"/>
+    <link href="/metronic/assets/global/plugins/select2/css/select2.css" rel="stylesheet"/>
+    <link href="/metronic/assets/global/plugins/select2/css/select2-bootstrap.css" rel="stylesheet"/>
+    <style>
+        .errorMessage{
+            color:#ff0000;
+        }
+        .deleteAll {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(211, 211, 211, 0.42);
+            display: none;
+        }
+
+        .delete {
+            width: 200px;
+            height: 150px;
+            position: relative;
+            left: 50%;
+            top: 13%;
+            margin-left: -100px;
+            background: white;
+            padding-top: 20px;
+            border: 1px solid #1f8dce;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        .delete h3 {
+            font-size: 15px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .isNo {
+            width: 100%;
+        }
+
+        .isNo a {
+            width: 40%;
+            float: left;
+            margin: 0 5%;
+        }
+
+        li span {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="page-content" style="min-height:650px">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-search"></i>查询条件
+                    </div>
+                    <div class="tools">
+                        <a class="collapse" href="javascript:;" data-original-title="" title=""> </a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tbody>
+                            <tr>
+                                <td width="10%" align="right">课件代码</td>
+                                <td width="23%">
+                                    <input name="kjdm" type="text" id="kjdm" class="form-control">
+                                </td>
+                                <td width="10%" align="right">课件名称</td>
+                                <td width="23%">
+                                    <input name="kjmc" type="text" id="kjmc" class="form-control">
+                                </td>
+                                <td width="10%" align="right">章节代码</td>
+                                <td width="23%">
+                                    <input name="zjdm" type="text" id="zjdm" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="10%" align="right">章节名称</td>
+                                <td width="23%">
+                                    <input name="zjmc" type="text" id="zjmc" class="form-control">
+                                </td>
+                                <td colspan="6" align="center">
+                                    <input type="submit" name="chaBtn" value="查询" id="chaBtn" class="btn blue">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="searchList" class="portlet box blue display-hide">
+
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-list-alt"></i>查询结果
+                    </div>
+                    <div class="tools">
+                        <a class="collapse" href="javascript:;" data-original-title="" title=""></a>
+                    </div>
+                </div>
+
+                <div class="portlet-body">
+                    <div class="JiLuShu" style="margin-bottom: 8px">
+                    </div>
+                    <div class="table-scrollable">
+                        <table class="table table-striped table-bordered table-advance table-hover">
+                            <thead>
+                            <tr>
+                                <th width="5"><input type="checkbox" id="checkAll" name="checkAll"/></th>
+                                <th width="7%">章节ID</th>
+                                <th width="20%">课件名称</th>
+                                <th width="20%">父章节</th>
+                                <th width="10%">章节代码</th>
+                                <th width="20%">章节名称</th>
+                                <th width="8%">章节序号</th>
+                                <th width="7%">课件时长</th>
+                                <th width="10%">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tBody">
+
+                            </tbody>
+                            <tr>
+                                <td colspan="9" align="center">
+                                    <div class="dropdown center">
+                                        <button class="btn btn-danger" type="button" id="btnDelete">
+                                            批量删除
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="9" align="center" class="text-align:center">
+                                    <ul id="pagination" class="pagination center" style="">
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br>
+                </div>
+            </div>
+
+            <div id="modifyBox" class="modal fade in " style="display: none; padding-right: 17px;">
+                <div class="modal-dialog" style="width: 800px;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close modifyClose"></button>
+                            <h4 class="modal-title">修改课件</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="page-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form class="form-horizontal" id="myForm" method="" action="">
+                                            <div class="portlet box blue">
+                                                <div class="portlet-title">
+                                                    <div class="caption">
+                                                        <i class="fa fa-pencil-square-o"></i>修改章节
+                                                    </div>
+                                                    <div class="tools">
+                                                        <a class="collapse" href="javascript:;" data-original-title=""
+                                                           title=""> </a>
+                                                    </div>
+                                                </div>
+                                                <div class="portlet-body" style="display: block;">
+                                                    <div class="form-body">
+                                                        <!--课件代码-->
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-2">课件代码
+                                                                <span class="required"> * </span>
+                                                            </label>
+                                                            <div class="col-sm-8">
+                                                                <div class="input-icon right">
+                                                                    <i class="fa"></i>
+                                                                    <select class="form-control" id="kjm" name="kjm">
+                                                                    </select>
+                                                                </div>
+                                                                <span class="errorMessage"></span>
+                                                            </div>
+                                                        </div>
+                                                        <!--父章节代码-->
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-2">
+                                                                父章节代码<span class="required"> * </span>
+                                                            </label>
+                                                            <div class="col-sm-8">
+                                                                <div class="input-icon right">
+                                                                    <i class="fa"></i>
+                                                                    <select class="form-control" id="fzjdm"
+                                                                            name="fzjdm">
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <span class="errorMessage"></span>
+                                                        </div>
+                                                        <!--章节代码-->
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-2">章节代码
+                                                                <span class="required"> * </span>
+                                                            </label>
+                                                            <div class="col-sm-8">
+                                                                <div class="input-icon right">
+                                                                    <i class="fa"></i>
+                                                                    <input name="zjdm" id="zjm" type="text"
+                                                                           maxlength="30" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <span class="errorMessage"></span>
+                                                        </div>
+                                                        <!--章节名称-->
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-2">章节名称
+                                                                <span class="required"> * </span>
+                                                            </label>
+                                                            <div class="col-sm-8">
+                                                                <div class="input-icon right">
+                                                                    <i class="fa"></i>
+                                                                    <input name="zjmc" id="zjc" type="text"
+                                                                           maxlength="50" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <span class="errorMessage"></span>
+                                                        </div>
+                                                        <!--章节序号-->
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-2">章节序号
+                                                                <span class="required"> * </span>
+                                                            </label>
+                                                            <div class="col-sm-8">
+                                                                <div class="input-icon right">
+                                                                    <i class="fa"></i>
+                                                                    <input name="zjxh" id="zjxh" type="number"
+                                                                           maxlength="50" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <span class="errorMessage"></span>
+                                                        </div>
+                                                        <!--课件时长-->
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-2">课件时长
+                                                                <span class="required"> * </span>
+                                                            </label>
+                                                            <div class="col-sm-8">
+                                                                <div class="input-icon right">
+                                                                    <i class="fa"></i>
+                                                                    <input name="kjsc" id="kjsc" type="number"
+                                                                           class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <span class="errorMessage"></span>
+                                                        </div>
+                                                        <!--课件地址-->
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-2">课件地址
+                                                                <span class="required"> * </span>
+                                                            </label>
+                                                            <div class="col-sm-8">
+                                                                <div class="input-icon right">
+                                                                    <i class="fa"></i>
+                                                                    <input name="kjdz" type="text" maxlength="200"
+                                                                           id="kjdz" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <span class="errorMessage"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-actions">
+                                                        <div class="row">
+                                                            <div class="col-sm-offset-2 col-sm-9">
+                                                                <input type="submit" name="" value="修改"
+                                                                       id="submit" class="btn blue">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="deleteAll">
+    <div class="delete" id="tanchu">
+        <h3>确定删除吗？</h3>
+        <div class="isNo">
+            <a class="btn btn-sm btn-success" isNo="Yes">
+                <i class="glyphicon glyphicon-ok"></i> Yes</a>
+            <a class="btn btn-sm btn-danger" isNo="No">
+                <i class="glyphicon glyphicon-remove"></i> No</a>
+        </div>
+    </div>
+</div>
+<!--[if lt IE 9]>
+<script src="/js/es5-shim.js"></script>
+<script src="/js/es5-sham.js"></script>
+<script src="/metronic/assets/global/plugins/respond.js"></script>
+<script src="/metronic/assets/global/plugins/excanvas.js"></script>
+<![endif]-->
+<script src="/metronic/assets/global/plugins/jquery.js"></script>
+<script src="/metronic/assets/global/plugins/bootstrap/js/bootstrap.js"></script>
+<script src="/metronic/assets/global/scripts/app.js"></script>
+<script src="/metronic/assets/global/plugins/select2/js/select2.full.js"></script>
+<script src="/metronic/assets/pages/scripts/components-select2.js"></script>
+<script src="/js/jquery.validate.js"></script>
+<script src="/js/jquery.form.js"></script>
+<script src="/js/bioadanyanz.js"></script>
+<script src="/js/height.js"></script>
+<script src="/js/zhangjie.js"></script>
+<script src="/js/topage.js"></script>
+<script src="./assets/global/plugins/jquery.blockui.min.js"></script>
+<script src="/js/loading.js"></script>
+<script>
+    var searchData = {kjdm: null, kjmc: null, zjdm: null, zjmc: null, dqym: null, myts: 10},
+        JiLuShu = null,
+        yeMeiShu = null,
+        id = null,
+        deleteAry = [];
+    var n =1
+    //            查询
+    $('#chaBtn').click(function () {
+        searchData = {
+            kjdm: $('#kjdm').val(),
+            kjmc: $('#kjmc').val(),
+            zjdm: $('#zjdm').val(),
+            zjmc: $('#zjmc').val(),
+            dqym: 1,
+            myts: 10
+        };
+        toAJax()
+    });
+
+    //          删除章节
+    deleteData();      
+    $('#btnDelete').bind('click',function (e) {
+        e = e||window.event;
+        $('#tBody tr').find('input').each(function (index, item) {
+            if ($(item).prop('checked')) {
+                deleteAry.push($(item).attr('zjidlb'))
+            }
+        });
+        if (deleteAry.length <= 0) {
+            alert('没有删除项');
+            return false
+        }
+        $('.deleteAll').show();
+        $('.delete').css('top',e.clientY - 200 +'px');
+        return false
+    });
+
+    function deleteData() {
+        $('#tanchu').bind('click',function (e) {
+            var e = e || window.event;
+            target = e.target || e.srcElement;
+            if ($(target).attr('isNo') == 'Yes'||$(target).hasClass('glyphicon-ok')) {
+                $.ajax({
+                    url: "/deleteZhangJie",
+                    type: 'get',
+                    data: {zjid: deleteAry.join(',')},
+                    success: function (data) {
+                        deleteAry = [];
+                        $('.deleteAll').hide();
+                        responseState(data, function () {
+                            alert(data.ZhiXingJieGuo);
+                            toAJax()
+                        })
+                    }
+                })
+            }
+            if ($(target).attr('isNo') == 'No'||$(target).hasClass('glyphicon-remove')) {
+                deleteAry = [];
+                $('.deleteAll').hide();
+                $('#tBody tr').find('input').each(function (index, item) {
+                    $(item).prop('checked', false)
+                });
+                $('#checkAll').prop('checked', false)
+            }
+            return false
+        })
+    }
+
+    //         修改章节
+     modifyDelete();
+    function modifyDelete() {
+        $('#tBody').bind('click',function (e) {
+            var e = e || window.event;
+            var target = e.target || e.srcElement;
+//            修改
+            if ($(target).attr('id') == 'modify'||$(target).hasClass('fa-edit')) {
+                id = $(target).attr('zjid');
+                $('#modifyBox').show();
+                getKjList(id, function () {
+                        $.ajax({
+                            url: "/oneZhangJie",
+                            type: 'get',
+                            data: {zjid: id},
+                            success: function (data) {
+                                responseState(data, tianChong);
+                                biaoDanYanZ('#myForm',"/updateZhangJie?zjid=" + id)
+                            }
+                        })
+                    });
+
+            }
+            return false
+        });
+    }
+
+    //     模板拼接
+    function searchStr(data) {
+        var str1 = '',
+            str2 = '',
+            str3 = '',
+            str4 = '';
+
+        $(data.ShuJu).each(function (index, item) {
+            str1 += '<tr>'
+                + '<td><input type="checkbox" name="checkItem" zjidlb="' + item.ZhangJieID + '"/></td>'
+                + '<td>' + item.ZhangJieID + '</td>'
+                + '<td>' + item.KeChengMing + '</td>'
+                + '<td>' + (item.FuZhangJieMing?item.FuZhangJieMing:'')+ '</td>'
+                + '<td>' + item.ZhangJieDaiMa + '</td>'
+                + '<td>' + item.ZhangJieMing + '</td>'
+                + '<td>' + item.ZhangJieXuHao + '</td>'
+                + '<td>' + item.KeJianShiChang + '</td>'
+                + '<td>'
+                + '<a href="#" title="修改课件" class="btn btn-outline btn-sm blue" id="modify" zjid="' + item.ZhangJieID + '">'
+                + '<i class="fa fa-edit" zjid="' + item.ZhangJieID + '"></i>修改 </a>'
+                + '</td>'
+                + '</tr>';
+        });
+
+        $('#tBody').html(str1);
+
+        str2 += '<div>共条' + JiLuShu + '记录</div>';
+
+        $('.JiLuShu').html(str2);
+
+        if (yeMeiShu <= 7) {
+            for (var i = 1; i <= yeMeiShu; i++) {
+                str3 += '<li><span>' + i + '</span></li>'
+            }
+        } else {
+            if (searchData.dqym <= 3) {
+                for (var i = 1; i <= 6; i++) {
+                    str3 += '<li><span>' + i + '</span></li>'
+                }
+                str3 += '<li class="disabled"><span>...</span></li>'
+            }
+            if (searchData.dqym > 3 && searchData.dqym < yeMeiShu - 2) {
+                str3 += '<li class="disabled"><span>...</span></li>';
+                for (var i = searchData.dqym - 2; i <= searchData.dqym + 2; i++) {
+                    str3 += '<li><span>' + i + '</span></li>'
+                }
+                str3 += '<li class="disabled"><span>...</span></li>'
+            }
+            if (searchData.dqym > 3 &&searchData.dqym >= yeMeiShu - 2) {
+                str3 += '<li class="disabled"><span>...</span></li>';
+                for (var i = yeMeiShu - 6; i <= yeMeiShu; i++) {
+                    str3 += '<li><span>' + i + '</span></li>'
+                }
+            }
+        }
+        str4 = ' <li id="first"><span>&lt;&lt;</span></li><li id="pre"><span >&lt;</span></li>'
+            + str3
+            + '<li id="next"><span>&gt;</span></li> <li id="last"><span>&gt;&gt;</span></li>';
+
+        $('#pagination').html(str4);
+
+        toHeight();
+
+        str1 = str2 = str3 = str4 = null;
+    }
+
+    //    页面调转ajax
+    function toAJax() {
+        $.ajax({
+            url: "/searchZhangJie",
+            type: "post",
+            dataType: "json",
+            data: searchData,
+            success: function (data) {
+                responseState(data,function () {
+                    JiLuShu = parseInt(data.JiLuShu);
+                    yeMeiShu = Math.ceil(JiLuShu / searchData.myts);
+                    $('#searchList').show();
+                    searchStr(data);
+                    initPage();
+                    checkAll();
+                })
+
+            }
+        })
+    }
+
+    // 修改表单填充
+    function tianChong(data) {
+        $('#kjm').find('option').each(function (index, item) {
+            $(item).html() == data.ShuJu[0].KeChengDaiMa ? $(item).prop('selected', true) : null;
+        });
+        firstZjList(data.ShuJu[0].KeChengDaiMa, data.ShuJu[0].FuZhangJieDaiMa);
+        $('#zjm').val(data.ShuJu[0].ZhangJieDaiMa);
+        $('#zjc').val(data.ShuJu[0].ZhangJieMing);
+        $('#zjxh').val(data.ShuJu[0].ZhangJieXuHao);
+        $('#kjsc').val(data.ShuJu[0].KeJianShiChang);
+        $('#kjdz').val(data.ShuJu[0].KeJianDiZhi);
+    }
+
+    $('#kjm').change(function () {
+        getZjList($(this).val())
+    });
+    //
+
+</script>
+</body>
+</html>

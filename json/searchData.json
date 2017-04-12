@@ -1,0 +1,68 @@
+
+{
+  "ZhiXingZhuangTai": 1,
+  "ZhiXingJieGuo": "暂停",
+  "JiLuShu":"15",
+  "ShuJu": [
+    {
+      "KeChengDaiMa":"1",
+      "KeChengMing":"课件名称",
+      "ZhuJiangJiaoShi":"主讲教师",
+      "ZongShiChang":"课件总时长",
+      "IsShunXuXueXi":"0",
+      "IsYunXuTuoDong":"0",
+      "IsZiDongBoFang":"0",
+      "IsZiDongJiaZaiXiaYiZhang":"0"
+    },
+    {
+      "KeChengDaiMa":"2",
+      "KeChengMing":"课件名称",
+      "ZhuJiangJiaoShi":"主讲教师",
+      "ZongShiChang":"课件总时长",
+      "IsShunXuXueXi":"0",
+      "IsYunXuTuoDong":"0",
+      "IsZiDongBoFang":"0",
+      "IsZiDongJiaZaiXiaYiZhang":"0"
+    },
+    {
+      "KeChengDaiMa":"3",
+      "KeChengMing":"课件名称",
+      "ZhuJiangJiaoShi":"主讲教师",
+      "ZongShiChang":"课件总时长",
+      "IsShunXuXueXi":"0",
+      "IsYunXuTuoDong":"0",
+      "IsZiDongBoFang":"0",
+      "IsZiDongJiaZaiXiaYiZhang":"0"
+    },
+    {
+      "KeChengDaiMa":"4",
+      "KeChengMing":"课件名称",
+      "ZhuJiangJiaoShi":"主讲教师",
+      "ZongShiChang":"课件总时长",
+      "IsShunXuXueXi":"0",
+      "IsYunXuTuoDong":"0",
+      "IsZiDongBoFang":"0",
+      "IsZiDongJiaZaiXiaYiZhang":"0"
+    },
+    {
+      "KeChengDaiMa":"5",
+      "KeChengMing":"课件名称",
+      "ZhuJiangJiaoShi":"主讲教师",
+      "ZongShiChang":"课件总时长",
+      "IsShunXuXueXi":"0",
+      "IsYunXuTuoDong":"0",
+      "IsZiDongBoFang":"0",
+      "IsZiDongJiaZaiXiaYiZhang":"0"
+    },
+    {
+      "KeChengDaiMa":"6",
+      "KeChengMing":"课件名称",
+      "ZhuJiangJiaoShi":"主讲教师",
+      "ZongShiChang":"课件总时长",
+      "IsShunXuXueXi":"0",
+      "IsYunXuTuoDong":"0",
+      "IsZiDongBoFang":"0",
+      "IsZiDongJiaZaiXiaYiZhang":"0"
+    }
+  ]
+}

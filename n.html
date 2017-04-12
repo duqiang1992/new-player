@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<li class="nav-item">
+    <a class="nav-link nav-toggle" id="3" target="_self">
+        <i class="icon-users"></i>
+        <span class="title">章节管理</span>
+        <span class="arrow"></span>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item">
+            <a href="/addZhangJie" class="nav-link " id="21" target="myFrameName"><span class="title">添加章节</span></a>
+        </li>
+        <li class="nav-item"><a href="/searchZhangJie" class="nav-link " id="22" target="myFrameName"><span
+                class="title">查找章节</span></a></li>
+        <li class="nav-item"><a href="/daoRuZhangJie" class="nav-link " id="23" target="myFrameName"><span
+                class="title">导入章节</span></a></li>
+    </ul>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link nav-toggle" id="LM3" target="_self">
+        <i class="icon-book-open"></i>
+        <span class="title">课程管理</span>
+        <span class="arrow"></span>
+    </a>
+
+    <ul class="sub-menu" style="display: none;">
+
+        <li class="nav-item">
+            <a href="http://192.168.100.7:8001/Manage/KeCheng/TianJiaKeCheng.aspx" class="nav-link " id="YM4"
+               target="_self">
+                <span class="title">添加课程</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="http://192.168.100.7:8001/Manage/KeCheng/GuanLiKeCheng.aspx" class="nav-link " id="YM5"
+               target="_self">
+                <span class="title">管理课程</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="http://192.168.100.7:8001/Manage/KeCheng/TongBuKeCheng.aspx" class="nav-link " id="YM16"
+               target="_self">
+                <span class="title">同步课程</span>
+            </a>
+        </li>
+
+    </ul>
+
+</li>
+</body>
+<script>
+
+    var recordset = [{KeChengDaiMa: 'D1'}, {KeChengDaiMa: 'A1'}];
+    var daoRuAry = [
+        {
+            '课件代码': 'D1',
+            '课件名称': '课件d1',
+            '课件总时长': '11',
+            '主讲教师': 'dq',
+            '课件域名': 'http://42.159.26.133/acc409m',
+            '是否顺序学习': '否',
+            '是否允许拖动播放': '是',
+            '是否自动播放': '否',
+            '是否自动加载下一章': '否',
+            '课件简介': ''
+        },
+        {
+            '课件代码': 'A1',
+            '课件名称': '课件d1',
+            '课件总时长': '11',
+            '主讲教师': 'dq',
+            '课件域名': 'http://42.159.26.133/acc409m',
+            '是否顺序学习': '否',
+            '是否允许拖动播放': '是',
+            '是否自动播放': '否',
+            '是否自动加载下一章': '否',
+            '课件简介': ''
+        },
+        {
+            '课件代码': 'D4',
+            '课件名称': '课件d1',
+            '课件总时长': '11',
+            '主讲教师': 'dq',
+            '课件域名': 'http://42.159.26.133/acc409m',
+            '是否顺序学习': '否',
+            '是否允许拖动播放': '是',
+            '是否自动播放': '否',
+            '是否自动加载下一章': '否',
+            '课件简介': ''
+        },
+        {
+            '课件代码': 'D5',
+            '课件名称': '课件d1',
+            '课件总时长': '11',
+            '主讲教师': 'dq',
+            '课件域名': 'http://42.159.26.133/acc409m',
+            '是否顺序学习': '否',
+            '是否允许拖动播放': '是',
+            '是否自动播放': '否',
+            '是否自动加载下一章': '否',
+            '课件简介': ''
+        },
+        {
+            '课件代码': 'D6',
+            '课件名称': '课件d1',
+            '课件总时长': '11',
+            '主讲教师': 'dq',
+            '课件域名': 'http://42.159.26.133/acc409m',
+            '是否顺序学习': '否',
+            '是否允许拖动播放': '是',
+            '是否自动播放': '否',
+            '是否自动加载下一章': '否',
+            '课件简介': ''
+        }
+    ];
+    var aryRepeat = [], endDaoRuData = [];
+    if (recordset.length > 0) {
+        for (var i = 0; i < daoRuAry.length; i++) {
+            var temp = daoRuAry[i], flag = true;
+            for (var j = 0; j < recordset.length; j++) {
+                var temp2 = recordset[j];
+                if (temp['课件代码'] == temp2['KeChengDaiMa']) {
+                    temp.ShiBaiYuanYin = '课件代码已存在';
+                    console.log('true');
+                    aryRepeat.push(temp);
+                    flag = false
+                }
+            }
+            if (flag) {
+                endDaoRuData.push(temp);
+                flag = false
+            }
+        }
+    } else {
+        endDaoRuData = daoRuAry
+    }
+    console.log(aryRepeat, endDaoRuData)
+</script>
+</html>

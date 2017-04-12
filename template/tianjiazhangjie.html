@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="./metronic/assets/global/plugins/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link href="./metronic/assets/global/plugins/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="./metronic/assets/global/css/components.css" rel="stylesheet"/>
+    <style>
+        .errorMessage {
+            color: #FF0000;
+        }
+    </style>
+</head>
+<body>
+<div class="page-content" style="min-height:650px">
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-horizontal" id="myForm" method="" action="">
+                <div class="portlet box blue">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-pencil-square-o"></i>添加章节
+                        </div>
+                        <div class="tools">
+                            <a class="collapse" href="javascript:;" data-original-title="" title=""> </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body" style="display: block;">
+                        <div class="form-body">
+                            <!--课件代码-->
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">课件代码
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        <select class="form-control" id="kjm" name="kjm">
+                                        </select>
+                                    </div>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <!--父章节代码-->
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">
+                                    父章节代码<span class="required"> * </span>
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        <select class="form-control" id="fzjdm" name="fzjdm">
+                                        </select>
+                                    </div>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <!--章节代码-->
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">章节代码
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        <input name="zjdm" type="text" maxlength="30" class="form-control">
+                                    </div>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <!--章节名称-->
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">章节名称
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        <input name="zjmc" type="text" maxlength="50" class="form-control">
+                                    </div>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <!--章节序号-->
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">章节序号
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        <input name="zjxh" type="number" maxlength="50" class="form-control">
+                                    </div>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <!--课件时长-->
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">课件时长
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        <input name="kjsc" type="number" class="form-control">
+                                    </div>
+                                </div>
+                                <span class="errorMessage"></span>
+                            </div>
+                            <!--课件地址-->
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">课件地址
+                                    <span class="required"> * </span>
+                                </label>
+                                <div class="col-sm-8">
+                                    <div class="input-icon right">
+                                        <i class="fa"></i>
+                                        <input name="kjdz" type="text" maxlength="200"
+                                               id="kjdz" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="errorMessage"></span>
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-sm-offset-2 col-sm-9">
+                                    <input type="submit" value="添加"
+                                           id="submit" class="btn blue">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--[if lt IE 9]>
+<script src="/js/es5-shim.js"></script>
+<script src="/js/es5-sham.js"></script>
+<script src="/metronic/assets/global/plugins/respond.js"></script>
+<script src="/metronic/assets/global/plugins/excanvas.js"></script>
+<![endif]-->
+<script src="./metronic/assets/global/plugins/jquery.js"></script>
+<script src="./metronic/assets/global/plugins/bootstrap/js/bootstrap.js"></script>
+<script src="./metronic/assets/global/scripts/app.js"></script>
+<script src="/js/jquery.validate.js"></script>
+<script src="./js/jquery.form.js"></script>
+<script src="./js/height.js"></script>
+<script src="./js/zhangjie.js"></script>
+<script src="./js/bioadanyanz.js"></script>
+<script src="./assets/global/plugins/jquery.blockui.min.js"></script>
+<script src="/js/loading.js"></script>
+<!--<script src="./js/common.js"></script>-->
+<script>
+    getKjList();
+    $('#kjm').change(function () {
+            getZjList($(this).val())
+    });
+    biaoDanYanZ("#myForm","/addZhangJie",function () {
+        $('#myForm').resetForm()
+    },function () {
+        $('#myForm').resetForm()
+    })
+</script>
+</body>
+</html>

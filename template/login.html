@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>
+        登陆页
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link href="/assets/global/plugins/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link href="/assets/global/plugins/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/assets/global/css/components.css" rel="stylesheet"/>
+    <link href="/css/common.css" rel="stylesheet"/>
+    <link href="/assets/pages/css/login.min.css" rel="stylesheet" type="text/css"/>
+</head>
+<body class="login">
+<!-- BEGIN LOGO -->
+<div class="logo">
+    <a href="index.html">
+        <img src="/assets/pages/img/logo-big.png" alt=""/> </a>
+</div>
+<!-- END LOGO -->
+<!-- BEGIN LOGIN -->
+<div class="content">
+    <!-- BEGIN LOGIN FORM -->
+    <form name="form1" id="form1" class="login-form">
+        <h3 class="form-title font-green">登 陆</h3>
+        <div class="alert alert-danger display-hide">
+            <button class="close" data-close="alert"></button>
+            <span> Enter any username and password. </span>
+        </div>
+        <div class="form-group">
+            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+            <label class="control-label visible-ie8 visible-ie9">用户名</label>
+            <input name="username" type="text" id="username" class="form-control form-control-solid placeholder-no-fix"
+                   name="username" autocomplete="off" placeholder="用户名"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label visible-ie8 visible-ie9">密码</label>
+            <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off"
+                   placeholder="密码" name="password" id="password"/>
+        </div>
+        <div>
+            <label class="control-label visible-ie8 visible-ie9">验证码</label>
+            <input type="text" class="form-control" style="width:90px;display:inline;" placeholder="验证码"
+                   autocomplete="off" name="txtCheckCode" id="txtCheckCode"/>
+            <span id="spanCheckCode" class="Display">
+                <img id="captchaImage" src="/captcha/0" class="captchaImage"/>
+                <a href="javascript:captcha()" class="pic" style="color: lightskyblue">刷新验证码</a>
+            </span>
+        </div>
+        <div class="form-actions" style="text-align:center;">
+            <button type="button" class="btn green uppercase">Login</button>
+        </div>
+    </form>
+    <!-- END LOGIN FORM -->
+</div>
+<div class="copyright"> 2016 © ChinaHCM</div>
+<div class="svg"></div>
+<script src="/assets/global/plugins/jquery.min.js"></script>
+<!--[if lt IE 9]>
+<script src="/js/es5-shim.js"></script>
+<script src="/js/es5-sham.js"></script>
+<script src="/metronic/assets/global/plugins/respond.js"></script>
+<script src="/metronic/assets/global/plugins/excanvas.js"></script>
+<![endif]-->
+<script src="/assets/global/plugins/bootstrap/js/bootstrap.js"></script>
+<script src="/assets/global/plugins/jquery.blockui.min.js"></script>
+<script src="/assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+
+<script src="/js/loading.js"></script>
+<script type="text/javascript">
+    $('button:button').click(post_data);
+    document.onkeydown = function (event) {
+        e = event ? event : (window.event ? window.event : null);
+        if (e.keyCode == 13) {
+            post_data()
+        }
+    };
+    function post_data() {
+        var loginData = {
+            yhm: $('#username').val(),
+            mm: $('#password').val(),
+            yzm: $('#txtCheckCode').val()
+        };
+        if (!loginData.yhm && !loginData.mm) {
+            $('.alert-danger').show();
+            return;
+        }
+        $.ajax({
+            url: "/login",
+            type: 'post',
+            dataType: 'json',
+            data: loginData,
+            success: function (data) {
+                var rscode = parseInt(data.ZhiXingZhuangTai);
+                if (rscode < 0) {
+                    $('.alert-danger').find('span').html(data.ZhiXingJieGuo);
+                    $('.alert-danger').show();
+                }
+                if (rscode >= 0) {
+                    Cookies.set('yhid', data.YongHuID);
+                    Cookies.set('yhtx', data.YongHuTouXiang);
+                    Cookies.set('xtid', data.XiTongID);
+                    Cookies.set('yhm', data.YongHuMing);
+                    Cookies.set('yhxm', data.XingMing);
+                    window.location.href = '/index';
+                }
+            }
+        })
+    }
+    function captcha() {
+        var path = '/captcha/'+Math.random();
+       $('#captchaImage').attr('src',path)
+    }
+</script>
+</body>
+</html>

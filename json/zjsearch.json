@@ -1,0 +1,62 @@
+
+{
+  "ZhiXingZhuangTai": 1,
+  "ZhiXingJieGuo": "暂停",
+  "JiLuShu":"15",
+  "ShuJu": [
+    {
+      "ZhangJieID":"1",
+      "KeChengMing":"课件名称",
+      "KeChengMing":"父章节",
+      "ZhangJieDaiMa":"章节代码",
+      "ZhangJieMing":"章节名称",
+      "ZhangJieXuHao":"章节序号",
+      "KeJianShiChang":"课件时长"
+    },
+    {
+      "ZhangJieID":"2",
+      "KeChengMing":"课件名称",
+      "KeChengMing":"父章节",
+      "ZhangJieDaiMa":"章节代码",
+      "ZhangJieMing":"章节名称",
+      "ZhangJieXuHao":"章节序号",
+      "KeJianShiChang":"课件时长"
+    },
+    {
+      "ZhangJieID":"3",
+      "KeChengMing":"课件名称",
+      "KeChengMing":"父章节",
+      "ZhangJieDaiMa":"章节代码",
+      "ZhangJieMing":"章节名称",
+      "ZhangJieXuHao":"章节序号",
+      "KeJianShiChang":"课件时长"
+    },
+    {
+      "ZhangJieID":"4",
+      "KeChengMing":"课件名称",
+      "KeChengMing":"父章节",
+      "ZhangJieDaiMa":"章节代码",
+      "ZhangJieMing":"章节名称",
+      "ZhangJieXuHao":"章节序号",
+      "KeJianShiChang":"课件时长"
+    },
+    {
+      "ZhangJieID":"5",
+      "KeChengMing":"课件名称",
+      "KeChengMing":"父章节",
+      "ZhangJieDaiMa":"章节代码",
+      "ZhangJieMing":"章节名称",
+      "ZhangJieXuHao":"章节序号",
+      "KeJianShiChang":"课件时长"
+    },
+    {
+      "ZhangJieID":"6",
+      "KeChengMing":"课件名称",
+      "KeChengMing":"父章节",
+      "ZhangJieDaiMa":"章节代码",
+      "ZhangJieMing":"章节名称",
+      "ZhangJieXuHao":"章节序号",
+      "KeJianShiChang":"课件时长"
+    }
+  ]
+}

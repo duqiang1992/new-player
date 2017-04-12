@@ -1,0 +1,197 @@
+{
+  "ZhiXingZhuangTai": 1,
+  "ZhiXingJieGuo": "执行结果",
+  "ShuJu": [
+    {
+      "KeChengDaiMa": "math_1",
+      "KeChengMing": "数学"
+    },
+    {
+      "KeChengDaiMa": "china_1",
+      "KeChengMing": "语文"
+    },
+    {
+      "KeChengDaiMa": "3",
+      "KeChengMing": "c"
+    },
+    {
+      "KeChengDaiMa": "4",
+      "KeChengMing": "d"
+    },
+    {
+      "KeChengDaiMa": "5",
+      "KeChengMing": "e"
+    },
+    {
+      "KeChengDaiMa": "6",
+      "KeChengMing": "f"
+    }
+  ]
+}
+{
+  "ZhiXingZhuangTai": 1,
+  "ZhiXingJieGuo": "查询成功",
+  "JiLuShu": 491,
+  "ShuJu": [
+    {
+      "FuZhangJieMing": "企业设立、经营与财务报表",
+      "ZhangJieID": 376,
+      "KeChengDaiMa": "ACC409m",
+      "ZhangJieDaiMa": "10",
+      "XiTongID": 100001,
+      "FuZhangJieDaiMa": "ch02",
+      "ZhangJieMing": "企业配置资源在报表上的反映",
+      "KeJianDiZhi": "http://42.159.26.133/acc409m/ACC409m_10.mp4",
+      "KeJianShiChang": "218",
+      "PaiXu": 999,
+      "ZhuangTai": 0,
+      "TianJiaShiJian": "2016-05-27T18:55:53.096Z",
+      "ZhangJieXuHao": 10,
+      "KeChengMing": null
+    },
+    {
+      "FuZhangJieMing": "企业设立、经营与财务报表",
+      "ZhangJieID": 377,
+      "KeChengDaiMa": "ACC409m",
+      "ZhangJieDaiMa": "11",
+      "XiTongID": 100001,
+      "FuZhangJieDaiMa": "ch02",
+      "ZhangJieMing": "购买和销售在报表上的反映",
+      "KeJianDiZhi": "http://42.159.26.133/acc409m/ACC409m_11.mp4",
+      "KeJianShiChang": "451",
+      "PaiXu": 999,
+      "ZhuangTai": 0,
+      "TianJiaShiJian": "2016-05-27T18:55:53.096Z",
+      "ZhangJieXuHao": 11,
+      "KeChengMing": null
+    },
+    {
+      "FuZhangJieMing": "企业设立、经营与财务报表",
+      "ZhangJieID": 378,
+      "KeChengDaiMa": "ACC409m",
+      "ZhangJieDaiMa": "12",
+      "XiTongID": 100001,
+      "FuZhangJieDaiMa": "ch02",
+      "ZhangJieMing": "理解会计处理方法",
+      "KeJianDiZhi": "http://42.159.26.133/acc409m/ACC409m_12.mp4",
+      "KeJianShiChang": "156",
+      "PaiXu": 999,
+      "ZhuangTai": 0,
+      "TianJiaShiJian": "2016-05-27T18:55:53.096Z",
+      "ZhangJieXuHao": 12,
+      "KeChengMing": null
+    },
+    {
+      "FuZhangJieMing": "企业设立、经营与财务报表",
+      "ZhangJieID": 379,
+      "KeChengDaiMa": "ACC409m",
+      "ZhangJieDaiMa": "13",
+      "XiTongID": 100001,
+      "FuZhangJieDaiMa": "ch02",
+      "ZhangJieMing": "理解企业的入资",
+      "KeJianDiZhi": "http://42.159.26.133/acc409m/ACC409m_13.mp4",
+      "KeJianShiChang": "422",
+      "PaiXu": 999,
+      "ZhuangTai": 0,
+      "TianJiaShiJian": "2016-05-27T18:55:53.096Z",
+      "ZhangJieXuHao": 13,
+      "KeChengMing": null
+    },
+    {
+      "FuZhangJieMing": "企业设立、经营与财务报表",
+      "ZhangJieID": 380,
+      "KeChengDaiMa": "ACC409m",
+      "ZhangJieDaiMa": "14",
+      "XiTongID": 100001,
+      "FuZhangJieDaiMa": "ch02",
+      "ZhangJieMing": "案例分析：虚报注册资本",
+      "KeJianDiZhi": "http://42.159.26.133/acc409m/ACC409m_14.mp4",
+      "KeJianShiChang": "451",
+      "PaiXu": 999,
+      "ZhuangTai": 0,
+      "TianJiaShiJian": "2016-05-27T18:55:53.096Z",
+      "ZhangJieXuHao": 14,
+      "KeChengMing": null
+    },
+    {
+      "FuZhangJieMing": "企业发展、扩张与财务报表",
+      "ZhangJieID": 382,
+      "KeChengDaiMa": "ACC409m",
+      "ZhangJieDaiMa": "15",
+      "XiTongID": 100001,
+      "FuZhangJieDaiMa": "ch03",
+      "ZhangJieMing": "自主经营的的资金来源和资金投入",
+      "KeJianDiZhi": "http://42.159.26.133/acc409m/ACC409m_15.mp4",
+      "KeJianShiChang": "239",
+      "PaiXu": 999,
+      "ZhuangTai": 0,
+      "TianJiaShiJian": "2016-05-27T18:55:53.096Z",
+      "ZhangJieXuHao": 15,
+      "KeChengMing": null
+    },
+    {
+      "FuZhangJieMing": "企业发展、扩张与财务报表",
+      "ZhangJieID": 383,
+      "KeChengDaiMa": "ACC409m",
+      "ZhangJieDaiMa": "16",
+      "XiTongID": 100001,
+      "FuZhangJieDaiMa": "ch03",
+      "ZhangJieMing": "自主经营和财务报表",
+      "KeJianDiZhi": "http://42.159.26.133/acc409m/ACC409m_16.mp4",
+      "KeJianShiChang": "329",
+      "PaiXu": 999,
+      "ZhuangTai": 0,
+      "TianJiaShiJian": "2016-05-27T18:55:53.096Z",
+      "ZhangJieXuHao": 16,
+      "KeChengMing": null
+    },
+    {
+      "FuZhangJieMing": "企业发展、扩张与财务报表",
+      "ZhangJieID": 384,
+      "KeChengDaiMa": "ACC409m",
+      "ZhangJieDaiMa": "17",
+      "XiTongID": 100001,
+      "FuZhangJieDaiMa": "ch03",
+      "ZhangJieMing": "控制性投资的撬动效应",
+      "KeJianDiZhi": "http://42.159.26.133/acc409m/ACC409m_17.mp4",
+      "KeJianShiChang": "398",
+      "PaiXu": 999,
+      "ZhuangTai": 0,
+      "TianJiaShiJian": "2016-05-27T18:55:53.096Z",
+      "ZhangJieXuHao": 17,
+      "KeChengMing": null
+    },
+    {
+      "FuZhangJieMing": "企业发展、扩张与财务报表",
+      "ZhangJieID": 385,
+      "KeChengDaiMa": "ACC409m",
+      "ZhangJieDaiMa": "18",
+      "XiTongID": 100001,
+      "FuZhangJieDaiMa": "ch03",
+      "ZhangJieMing": "控制性投资在财务报表中的识别",
+      "KeJianDiZhi": "http://42.159.26.133/acc409m/ACC409m_18.mp4",
+      "KeJianShiChang": "442",
+      "PaiXu": 999,
+      "ZhuangTai": 0,
+      "TianJiaShiJian": "2016-05-27T18:55:53.096Z",
+      "ZhangJieXuHao": 18,
+      "KeChengMing": null
+    },
+    {
+      "FuZhangJieMing": "企业发展、扩张与财务报表",
+      "ZhangJieID": 386,
+      "KeChengDaiMa": "ACC409m",
+      "ZhangJieDaiMa": "19",
+      "XiTongID": 100001,
+      "FuZhangJieDaiMa": "ch03",
+      "ZhangJieMing": "控制性投资的撬动效应在资产总额中的反映",
+      "KeJianDiZhi": "http://42.159.26.133/acc409m/ACC409m_19.mp4",
+      "KeJianShiChang": "456",
+      "PaiXu": 999,
+      "ZhuangTai": 0,
+      "TianJiaShiJian": "2016-05-27T18:55:53.096Z",
+      "ZhangJieXuHao": 19,
+      "KeChengMing": null
+    }
+  ]
+}

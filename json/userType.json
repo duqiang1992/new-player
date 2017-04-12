@@ -1,0 +1,18 @@
+{
+  "ZhiXingZhuangTai": 1,
+  "ZhiXingJieGuo": "执行结果",
+  "ShuJu": [
+    {
+      "YongHuLeiXingID": 1,
+      "YongHuLeiXing": "用户类型名"
+    },
+    {
+      "YongHuLeiXingID": 2,
+      "YongHuLeiXing": "用户类型名"
+    },
+    {
+      "YongHuLeiXingID": 3,
+      "YongHuLeiXing": "用户类型名"
+    }
+  ]
+}

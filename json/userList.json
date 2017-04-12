@@ -1,0 +1,39 @@
+{
+  "ZhiXingZhuangTai": 1,
+  "ZhiXingJieGuo": "执行结果",
+  "JiLuShu":13,
+  "ShuJu": [
+    {
+      "YongHuID":1,
+      "YongHuTouXiang": "用户头像url",
+      "XingMing": "姓名",
+      "YongHuMing": "用户名",
+      "YongHuLeiXing": "用户类型",
+      "ZuiHouDengLuShiJian": "最后登陆时间"
+    },
+    {
+      "YongHuID":1,
+      "YongHuTouXiang": "用户头像url",
+      "XingMing": "姓名",
+      "YongHuMing": "用户名",
+      "YongHuLeiXing": "用户类型",
+      "ZuiHouDengLuShiJian": "最后登陆时间"
+    },
+    {
+      "YongHuID":1,
+      "YongHuTouXiang": "用户头像url",
+      "XingMing": "姓名",
+      "YongHuMing": "用户名",
+      "YongHuLeiXing": "用户类型",
+      "ZuiHouDengLuShiJian": "最后登陆时间"
+    },
+    {
+      "YongHuID":1,
+      "YongHuTouXiang": "用户头像url",
+      "XingMing": "姓名",
+      "YongHuMing": "用户名",
+      "YongHuLeiXing": "用户类型",
+      "ZuiHouDengLuShiJian": "最后登陆时间"
+    }
+  ]
+}

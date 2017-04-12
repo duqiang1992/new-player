@@ -1,0 +1,335 @@
+{
+  Directory: {
+    workbooks: [
+      '/xl/workbook.xml'
+    ],
+    sheets: [
+      '/xl/worksheets/sheet1.xml'
+    ],
+    themes: [
+      '/xl/theme/theme1.xml'
+    ],
+    styles: [
+      '/xl/styles.xml'
+    ],
+    coreprops: [
+      '/docProps/core.xml'
+    ],
+    extprops: [
+      '/docProps/app.xml'
+    ],
+    custprops: [],
+    strs: [
+      '/xl/sharedStrings.xml'
+    ],
+    comments: [],
+    vba: [],
+    TODO: [],
+    rels: [],
+    xmlns: 'http://schemas.openxmlformats.org/package/2006/content-types',
+    calcchain: '',
+    sst: '/xl/sharedStrings.xml',
+    style: '/xl/styles.xml',
+    defaults: {
+      bin: 'application/vnd.openxmlformats-officedocument.spreadsheetml.printerSettings',
+      rels: 'application/vnd.openxmlformats-package.relationships+xml',
+      xml: 'application/xml'
+    }
+  },
+  Workbook: {
+    AppVersion: [
+      ,
+    appName: 'xl',
+    lastEdited: '6',
+    lowestEdited: '4',
+    rupBuild: '14420'
+    ],
+    WBProps: [,
+    filterPrivacy: '1',
+    defaultThemeVersion: '124226',
+    allowRefreshQuery: '0',
+    autoCompressPictures: '1',
+    backupFile: '0',
+    checkCompatibility: '0',
+    codeName: '',
+    date1904: '0',
+    dateCompatibility: '1',
+    hidePivotFieldList: '0',
+    promptedSolutions: '0',
+    publishItems: '0',
+    refreshAllConnections: false,
+    saveExternalLinkValues: '1',
+    showBorderUnselectedTables: '1',
+    showInkAnnotation: '1',
+    showObjects: 'all',
+    showPivotChartFilter: '0'
+    ],
+    WBView: [
+      [
+        Object
+      ]
+    ],
+    Sheets: [
+      [
+        Object
+      ]
+    ],
+    CalcPr: [
+      ,
+    calcId: '122211',
+    calcCompleted: 'true',
+    calcMode: 'auto',
+    calcOnSave: 'true',
+    concurrentCalc: 'true',
+    fullCalcOnLoad: 'false',
+    fullPrecision: 'true',
+    iterate: 'false',
+    iterateCount: '100',
+    iterateDelta: '0.001',
+    refMode: 'A1'
+    ],
+    xmlns: 'http://schemas.openxmlformats.org/spreadsheetml/2006/main'
+  },
+  Props: {
+    LastAuthor: '',
+    Author: '',
+    CreatedDate: 2006
+    -0
+    9
+    -16
+    T00: 0
+    0: 0
+    0.000
+    Z,
+    ModifiedDate: 2017
+    -0
+    3
+    -30
+    T05: 32
+    :
+    0
+    0.000
+    Z,
+    Application: 'Microsoft Excel',
+    AppVersion: '15.0300',
+    Company: '',
+    DocSecurity: '0',
+    Manager: undefined,
+    HyperlinksChanged: false,
+    SharedDoc: false,
+    LinksUpToDate: false,
+    ScaleCrop: false,
+    SheetNames: [
+      'Sheet1'
+    ],
+    Worksheets: 1
+  },
+  Custprops: {},
+  Deps: {},
+  Sheets: {
+    Sheet1: {
+      '!ref': 'A1:J2',
+      A1: [
+        Object
+      ],
+      B1: [
+        Object
+      ],
+      C1: [
+        Object
+      ],
+      D1: [
+        Object
+      ],
+      E1: [
+        Object
+      ],
+      F1: [
+        Object
+      ],
+      G1: [
+        Object
+      ],
+      H1: [
+        Object
+      ],
+      I1: [
+        Object
+      ],
+      J1: [
+        Object
+      ],
+      A2: [
+        Object
+      ],
+      B2: [
+        Object
+      ],
+      C2: [
+        Object
+      ],
+      D2: [
+        Object
+      ],
+      E2: [
+        Object
+      ],
+      F2: [
+        Object
+      ],
+      G2: [
+        Object
+      ],
+      H2: [
+        Object
+      ],
+      I2: [
+        Object
+      ]
+    }
+  },
+  SheetNames: [
+    'Sheet1'
+  ],
+  Strings: [
+    {
+      t: '课件代码',
+      r: '<t>课件代码</t><phoneticPr fontId="1" type="noConversion"/>',
+      h: '课件代码'
+    },
+    {
+      t: '课件名称',
+      r: '<t>课件名称</t><phoneticPr fontId="1" type="noConversion"/>',
+      h: '课件名称'
+    },
+    {
+      t: '课件总时长',
+      r: '<t>课件总时长</t>',
+      h: '课件总时长'
+    },
+    {
+      t: '主讲教师',
+      r: '<t>主讲教师</t>',
+      h: '主讲教师'
+    },
+    {
+      t: '是否顺序学习',
+      r: '<t>是否顺序学习</t>',
+      h: '是否顺序学习'
+    },
+    {
+      t: '是否允许拖动播放',
+      r: '<t>是否允许拖动播放</t><phoneticPr fontId="1" type="noConversion"/>',
+      h: '是否允许拖动播放'
+    },
+    {
+      t: '是否自动播放',
+      r: '<t>是否自动播放</t><phoneticPr fontId="1" type="noConversion"/>',
+      h: '是否自动播放'
+    },
+    {
+      t: '否',
+      r: '<t>否</t><phoneticPr fontId="1" type="noConversion"/>',
+      h: '否'
+    },
+    {
+      t: '否',
+      r: '<t>否</t><phoneticPr fontId="1" type="noConversion"/>',
+      h: '否'
+    },
+    {
+      t: '否',
+      r: '<t>否</t><phoneticPr fontId="1" type="noConversion"/>',
+      h: '否'
+    },
+    {
+      t: '企业财务报表分析',
+      r: '<t>企业财务报表分析</t><phoneticPr fontId="1" type="noConversion"/>',
+      h: '企业财务报表分析'
+    },
+    {
+      t: '张新民',
+      r: '<t>张新民</t><phoneticPr fontId="1" type="noConversion"/>',
+      h: '张新民'
+    },
+    {
+      t: 'http://42.159.26.133/acc409m',
+      r: '<t>http://42.159.26.133/acc409m</t><phoneticPr fontId="1" type="noConversion"/>',
+      h: 'http://42.159.26.133/acc409m'
+    },
+    {
+      t: '课件域名',
+      r: '<t>课件域名</t><phoneticPr fontId="1" type="noConversion"/>',
+      h: '课件域名'
+    },
+    {
+      t: '是否自动加载下一章',
+      r: '<t>是否自动加载下一章</t><phoneticPr fontId="1" type="noConversion"/>',
+      h: '是否自动加载下一章'
+    },
+    {
+      t: '课件简介',
+      r: '<t>课件简介</t><phoneticPr fontId="1" type="noConversion"/>',
+      h: '课件简介'
+    },
+    {
+      t: 'ACC123m',
+      r: '<t>ACC123m</t><phoneticPr fontId="1" type="noConversion"/>',
+      h: 'ACC123m'
+    },
+    Count:'18',
+    Unique:'17'
+  ],
+  Styles: {
+    Fills: [
+      [
+        Object
+      ],
+      [
+        Object
+      ]
+    ],
+    CellXf: [
+      [
+        Object
+      ],
+      [
+        Object
+      ]
+    ]
+  },
+  Themes: {},
+  SSF: {
+    '0': 'General',
+    '1': '0',
+    '2': '0.00',
+    '3': '#,##0',
+    '4': '#,##0.00',
+    '9': '0%',
+    '10': '0.00%',
+    '11': '0.00E+00',
+    '12': '# ?/?',
+    '13': '# ??/??',
+    '14': 'm/d/yy',
+    '15': 'd-mmm-yy',
+    '16': 'd-mmm',
+    '17': 'mmm-yy',
+    '18': 'h:mm AM/PM',
+    '19': 'h:mm:ss AM/PM',
+    '20': 'h:mm',
+    '21': 'h:mm:ss',
+    '22': 'm/d/yy h:mm',
+    '37': '#,##0 ;(#,##0)',
+    '38': '#,##0 ;[Red](#,##0)',
+    '39': '#,##0.00;(#,##0.00)',
+    '40': '#,##0.00;[Red](#,##0.00)',
+    '45': 'mm:ss',
+    '46': '[h]:mm:ss',
+    '47': 'mmss.0',
+    '48': '##0.0E+0',
+    '49': '@',
+    '56': '"上午/下午 "hh"時"mm"分"ss"秒 "',
+    '65535': 'General'
+  }
+}
+

@@ -1,0 +1,138 @@
+{
+  "ZhiXingZhuangTai": 1,
+  "ZhiXingJieGuo": "暂停",
+  "ShuJu": [
+    {
+      "LanMuID":1,
+      "LanMuMingCheng":"首页",
+      "LianJie":"/index",
+      "IsTanChu":1,
+      "TuBiao":"icon-home",
+      "ShuJu": []
+    },
+    {
+      "LanMuID": 2,
+      "LanMuMingCheng":"课件管理",
+      "LianJie":"",
+      "IsTanChu":0,
+      "TuBiao":"icon-book-open",
+      "ShuJu":
+        [
+          {
+            "YeMianID": 11,
+            "YeMianMingCheng": "添加课件",
+            "LianJie": "/kejiantianjia",
+            "IsTanChu":0
+          },
+          {
+            "YeMianID": 12,
+            "YeMianMingCheng": "查询课件",
+            "LianJie": "/kejianchaxun",
+            "IsTanChu":0
+          },
+          {
+            "YeMianID": 13,
+            "YeMianMingCheng": "导入课件",
+            "LianJie": "/daoRuKeJian",
+            "IsTanChu":0
+          }
+        ]
+  },
+    {
+      "LanMuID": 3,
+      "LanMuMingCheng":"章节管理",
+      "LianJie":"",
+      "IsTanChu":0,
+      "TuBiao":"icon-users",
+      "ShuJu":
+        [
+          {
+            "YeMianID": 21,
+            "YeMianMingCheng": "添加章节",
+            "LianJie": "/addZhangJie",
+            "IsTanChu":0
+          },
+          {
+            "YeMianID": 22,
+            "YeMianMingCheng": "查找章节",
+            "LianJie": "/searchZhangJie",
+            "IsTanChu":0
+          },
+          {
+            "YeMianID": 23,
+            "YeMianMingCheng": "导入章节",
+            "LianJie": "/daoRuZhangJie",
+            "IsTanChu":0
+          }
+        ]
+  },
+    {
+      "LanMuID": 4,
+      "LanMuMingCheng":"用户管理",
+      "LianJie":"",
+      "IsTanChu":0,
+      "TuBiao":"icon-briefcase",
+      "ShuJu":
+        [
+          {
+            "YeMianID": 31,
+            "YeMianMingCheng": "添加用户",
+            "LianJie": "/addYongHu",
+            "IsTanChu":0
+          },
+          {
+            "YeMianID": 32,
+            "YeMianMingCheng": "管理用户",
+            "LianJie": "/searchUser",
+            "IsTanChu":0
+          }
+        ]
+  },
+    {
+      "LanMuID": 5,
+      "LanMuMingCheng":"答疑管理",
+      "LianJie":"//four",
+      "IsTanChu":0,
+      "TuBiao":"icon-speech",
+      "ShuJu": []
+  },
+    {
+      "LanMuID": 6,
+      "LanMuMingCheng":"访问统计",
+      "LianJie":"",
+      "IsTanChu":0,
+      "TuBiao":"icon-bar-chart",
+      "ShuJu":
+        [
+          {
+            "YeMianID": 51,
+            "YeMianMingCheng": "课件访问情况",
+            "LianJie": "/kjView",
+            "IsTanChu":0
+          },
+          {
+            "YeMianID": 52,
+            "YeMianMingCheng": "资料每日访问情况",
+            "LianJie": "//five2",
+            "IsTanChu":0
+          }
+        ]
+  },
+    {
+      "LanMuID": 7,
+      "LanMuMingCheng":"个人信息",
+      "LianJie":"//six",
+      "IsTanChu":0,
+      "TuBiao":"icon-user",
+      "ShuJu":[]
+  },
+    {
+      "LanMuID": 8,
+      "LanMuMingCheng":"退出",
+      "LianJie":"/out",
+      "IsTanChu":1,
+      "TuBiao":"icon-logout",
+      "ShuJu": []
+  }
+  ]
+}

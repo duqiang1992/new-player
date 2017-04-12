@@ -1,0 +1,7 @@
+node_modules
+.idea
+router
+test
+public/assets
+public/metronic
+public/upload

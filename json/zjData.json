@@ -1,0 +1,31 @@
+{
+  "ZhiXingZhuangTai":1,
+  "ZhiXingJieGuo":"执行结果",
+  "ShuJu":
+  [
+    {
+      "ZhangJieDaiMa":"math_1",
+      "ZhangJieMing":"数学"
+    },
+    {
+      "ZhangJieDaiMa":"china_1",
+      "ZhangJieMing":"语文"
+    },
+    {
+      "ZhangJieDaiMa":"3",
+      "ZhangJieMing":"c"
+    },
+    {
+      "ZhangJieDaiMa":"4",
+      "ZhangJieMing":"d"
+    },
+    {
+      "ZhangJieDaiMa":"5",
+      "ZhangJieMing":"e"
+    },
+    {
+      "ZhangJieDaiMa":"6",
+      "ZhangJieMing":"f"
+    }
+  ]
+}

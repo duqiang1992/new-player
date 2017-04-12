@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>
+        课程资源管理
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <link href="./metronic/assets/global/plugins/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link href="./metronic/assets/global/plugins/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="./metronic/assets/global/css/components.css" rel="stylesheet"/>
+    <!--<link href="./metronic/assets/global/css/plugins.css" rel="stylesheet"/>-->
+    <link rel="stylesheet" href="./metronic/assets/global/plugins/select2/css/select2.css">
+    <style>
+        td {
+            line-height: inherit;
+        }
+    </style>
+</head>
+<body>
+<div class="page-content" style="min-height:650px">
+
+    <h3 class="page-title"> 课程每日访问情况 </h3>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet box blue">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-search"></i>统计条件
+                    </div>
+                    <div class="tools">
+                        <a class="collapse" href="javascript:;" data-original-title="" title=""> </a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tbody>
+                            <tr>
+                                <td width="10%" align="right">天数</td>
+                                <td width="15%">
+                                    <input name="" type="text" value="7" id="txtTianShu" class="form-control">
+                                </td>
+                                <td width="10%" align="right">课程</td>
+                                <td width="40%" style="padding-top: 0">
+                                    <div style="padding-top: 8px">
+                                        <select id="kjm" multiple="multiple" class="form-control">
+                                        </select>
+                                    </div>
+                                    　　
+                                </td>
+                                <td colspan="2" align="center">
+                                    <input type="submit" name="" value="统计" id="tongji" class="btn blue">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="endPhoto" class="portlet box blue" style="display: none">
+
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-line-chart"></i>统计结果
+                        </div>
+                        <div class="tools">
+                            <a class="collapse" href="javascript:;" data-original-title="" title=""> </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="table-scrollable">
+                            <div>
+                                <table class="table text-center table-striped table-bordered table-advance table-hover" cellspacing="0" rules="all" border="1" id="" style="border-collapse:collapse;">
+                                    <tbody id="tBody">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- 统计图 -->
+                        <div id="pnlTongJiTu" data-highcharts-chart="0">
+
+                        </div>
+
+                        <p class="text-center">
+
+                        </p>
+                    </div>
+
+                </div>
+
+        </div>
+    </div>
+</div>
+</body>
+<!--[if lt IE 9]>
+<script src="/js/es5-shim.js"></script>
+<script src="/js/es5-sham.js"></script>
+<script src="/metronic/assets/global/plugins/respond.js"></script>
+<script src="/metronic/assets/global/plugins/excanvas.js"></script>
+<![endif]-->
+<script src="./metronic/assets/global/plugins/jquery.js"></script>
+<!--<script src="./metronic/assets/global/scripts/app.js"></script>-->
+<script src="./metronic/assets/global/plugins/select2/js/select2.full.js"></script>
+<script src="./metronic/assets/global/plugins/highcharts/js/highcharts.js"></script>
+<script src="./assets/global/plugins/jquery.blockui.min.js"></script>
+<script src="./js/height.js"></script>
+<script src="/js/loading.js"></script>
+<script>
+    $("#kjm").select2({
+        tags: true
+//       maximumSelectionLength: 3  //最多能够选择的个数
+    });
+    $.ajax({
+        url: "/kjList",
+        dataType: "json",
+        success: function (data) {
+            responseState(data, kjList, null, false)
+        }
+    });
+    //  生成课件下拉列表
+    function kjList(data) {
+        var first = true;
+        var str = '';
+        $(data.ShuJu).each(function (index, item) {
+            str += '<option value="' + item.KeChengID + '">' + item.KeChengMing + '</option>'
+        });
+        $('#kjm').html(str);
+        str = null;
+    }
+    //   查询
+    $('#tongji').bind('click',function () {
+        var obj = {
+            tjts: $('#txtTianShu').val(),
+            kcdmlb: $('#kjm').val() ? $('#kjm').val().join(',') : ''
+        };
+        $.ajax({
+            url: "/kjVew",
+            type: "post",
+            dataType: 'json',
+            data: obj,
+            success: function (data) {
+               var Dary = [],countAry=[],allAry=data.ShuJu,dataObj={};
+               $(allAry).each(function (index,item) {
+                   var ary = [],itemObj = {};
+                   itemObj.KeChengMing = item['课程'];
+                   for(var a in item){
+                       if(a!='课程') {
+                           ary.push(item[a]);
+                           if(index==0){
+                               Dary.push(a)
+                           }
+                       }
+                       }
+                   itemObj.TongJiZhi = ary;
+                   countAry.push(itemObj)
+               });
+                dataObj.TongJiRiQi=Dary;
+                dataObj.ShuJu=countAry;
+                $('#endPhoto').show();
+                allPhoto(dataObj);
+                highPhoto(dataObj);
+                toHeight();
+            }
+        });
+        return false
+    });
+    //    生成统计表
+    function allPhoto(data) {
+        var headStr = '<td>课程</td>',
+            bodyStr = '',
+            strTj = '';
+        // 统计表头
+        $(data.TongJiRiQi).each(function (index, item) {
+            headStr += '<td>' + item + '</td>'
+        });
+        // 表体
+        $(data.ShuJu).each(function (index, item) {
+            $(item.TongJiZhi).each(function (index, item) {
+                strTj += '<td>' + item + '</td>'
+            });
+            bodyStr += '<tr>'
+                + '<td>' + item.KeChengMing + '</td>'
+                + strTj
+                + '</tr>';
+            strTj = '';
+        });
+        var endStr ='<tr>'+ headStr+'</tr>'+bodyStr;
+        $('#tBody').html(endStr);
+
+        headStr = bodyStr = "";
+    }
+    //    生成统计图
+    function highPhoto(data) {
+            var aryData= [],
+                shuju =data.ShuJu,
+                allShuJu = [];
+            if(shuju.length<=10){
+                $(data.ShuJu).each(function (index,item) {
+                    aryData.push({
+                        name:item.KeChengMing,
+                        data:item.TongJiZhi
+                    })
+                });
+            }
+            if(shuju.length>10){
+                var dataObj ={name:'全部课件',data:[]};
+               $(shuju).each(function (index,item) {
+                    allShuJu.push(item.TongJiZhi)
+                });
+              for(var i=0;i<allShuJu[0].length;i++){;
+                  var all = 0;
+                  $(allShuJu).each(function (index,item) {
+                      all +=parseInt(item[i])
+                  });
+                  dataObj.data.push(all)
+              }
+               aryData.push(dataObj)
+            }
+            $('#pnlTongJiTu').highcharts({
+            title: {
+                text: '访问统计图',
+                x: -20 //center
+            },
+            xAxis: {
+                categories: data.TongJiRiQi
+            },
+            yAxis: {
+                title: {
+                    text: '访问次数'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: aryData
+        });
+    }
+</script>
+</html>

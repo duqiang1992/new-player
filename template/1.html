@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+//    setTimeout(function () {
+//        alert(1);
+//        window.open("http://www.baidu.com")
+//    },3000)
+    function getTime() {
+        var time = new Date(),
+            str = '';
+        timeObj = {
+            y:time.getFullYear().toString(),
+            m:(time.getMonth()+1).toString(),
+            d:time.getDate().toString(),
+            h:time.getHours().toString(),
+            f:time.getMinutes().toString(),
+            s:time.getSeconds().toString()
+        };
+        for(var a in timeObj){
+            str+=timeObj[a]
+        }
+        return str
+    }
+console.log(getTime())
+</script>
+</html>
